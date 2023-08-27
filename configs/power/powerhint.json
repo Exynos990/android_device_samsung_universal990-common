@@ -61,6 +61,20 @@
             "ResetOnInit": true
         },
         {
+            "Name": "SetOnlineCpu",
+            "Path": "/sys/power/cpuhp/set_online_cpu",
+            "Values": [
+                "0xff",
+                "0x3f"
+            ],
+            "Comments": [
+                "0xff => 11111111",
+                "0x3f => 00111111"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
             "Name": "AmAppLaunch",
             "Path": "/sys/kernel/mm/vmscan/am_app_launch",
             "Values": [
@@ -68,6 +82,32 @@
                 "1"
             ],
             "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "ReqMode",
+            "Path": "/sys/kernel/ems/emstune/req_mode",
+            "Values": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+            "Comments": [
+                "0 => Normal Mode",
+                "1 => Power-Scenario Mode",
+                "2 => Performance Mode",
+                "3 => Light-Game Mode",
+                "4 => Light-Video Mode",
+                "5 => Balance Mode",
+                "6 => Pinned Mode",
+                "7 => Game-Mode"
+            ],
+            "DefaultIndex": 1,
             "ResetOnInit": true
         },
         {
@@ -102,6 +142,12 @@
             "Node": "GPUMaxFreq",
             "Duration": 0,
             "Value": "455000"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "ReqMode",
+            "Duration": 0,
+            "Value": "5"
         },
         {
             "PowerHint": "LAUNCH",
@@ -174,6 +220,12 @@
             "Node": "CPUMinFreq",
             "Duration": 0,
             "Value": "2730000"
+        },
+        {
+            "PowerHint": "LOW_POWER",
+            "Node": "SetOnlineCpu",
+            "Duration": 0,
+            "Value": "0x3f"
         },
         {
             "PowerHint": "INTERACTIVE",
