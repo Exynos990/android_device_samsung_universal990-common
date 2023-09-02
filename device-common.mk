@@ -374,3 +374,13 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Call the proprietary setup
 $(call inherit-product, vendor/samsung/universal990-common/universal990-common-vendor.mk)
+
+TARGET_BOOT_ANIMATION_RES := 1080  
+TARGET_ENABLE_BLUR := false
+TARGET_FACE_UNLOCK_SUPPORTED := true    
+WITH_GMS := true
+CHERISH_BUILD_TYPE := UNOFFICIAL
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true 
+PRODUCT_USE_SCUDO := true
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.cherish.maintainer=FrEeRuNnEr4EvEr
